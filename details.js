@@ -73,6 +73,7 @@ document.querySelector('.dismiss-icon').addEventListener('click', function() {
 
 document.addEventListener('DOMContentLoaded', (event) => {
     let startY;
+    let isSwiping = false;
 
     const itemDetail = document.getElementById('itemDetail');
     const dismissIcon = document.querySelector('.dismiss-icon');
@@ -81,6 +82,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const handleTouchStart = (evt) => {
         const firstTouch = evt.touches[0];
         startY = firstTouch.clientY;
+        isSwiping = true; // A new swipe is starting
     };
 
     // Function to handle the move of a touch
@@ -89,19 +91,32 @@ document.addEventListener('DOMContentLoaded', (event) => {
             return;
         }
 
-        let yUp = evt.touches[0].clientY;
-        let yDiff = startY - yUp;
+        if (isSwiping) {
+            evt.preventDefault(); // Prevent the default action (scroll / refresh)
+            let yUp = evt.touches[0].clientY;
+            let yDiff = startY - yUp;
 
-        // Check if the swipe is downward
-        if (yDiff < 0) {
-            // If the swipe is downward and more than a certain distance, close the detail
-            closeDetail();
+            // Check if the swipe is downward and over a certain threshold
+            if (yDiff < -50) { // You might need to adjust this threshold
+                closeDetail();
+                isSwiping = false; // Swipe is finished
+            }
         }
+    };
+
+    // Function to handle the end of a touch
+    const handleTouchEnd = (evt) => {
+        if (isSwiping) {
+            evt.preventDefault(); // Prevent the default action (scroll / refresh)
+            isSwiping = false; // Swipe is finished
+        }
+        startY = null; // Reset starting Y position
     };
 
     // Add event listeners to the detail view
     itemDetail.addEventListener('touchstart', handleTouchStart, false);
     itemDetail.addEventListener('touchmove', handleTouchMove, false);
+    itemDetail.addEventListener('touchend', handleTouchEnd, false);
 
     // Add click event to dismiss icon
     dismissIcon.addEventListener('click', closeDetail);
@@ -109,6 +124,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Function to close the detail view
     function closeDetail() {
         itemDetail.classList.remove('active');
-        startY = null; // Reset starting Y position
     }
 });
+
