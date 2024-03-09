@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    height: 104px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: auto;
+    white-space: nowrap;
+    background-color: #f1ecd8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.category-picker {
+    flex-grow: 1;
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.category-picker::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+}
+
+.category-button {
+    flex: 0 0 auto;
+    margin: 0 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+}
+
+.container {
+    display: none; /* Initially hide all categories */
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0; /* Start with 0 opacity for a fade effect */
+    transition: opacity 0.5s ease; /* Transition effect for the opacity change */
+}
+
+.box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.box img {
+    flex: 1;
+    max-width: 200px;
+    height: auto;
+    margin-right: 20px;
+}
+.box-content {
+    flex: 2;
+}
+.box h2 {
+    margin: 0;
+}
+.box p {
+    margin: 5px 0;
+}
+
+.category-button.selected {
+    background-color: #7c6555; /* Example: Change background color */
+    color: #ffffff; /* Change text color if needed */
+    font-weight: bold; /* Make text bold */
+    border-radius: 25px;
+}
+
+.item-detail-overlay {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(100%); /* Start hidden */
+}
+
+.item-detail-content {
+    background-color: rgba(124, 101, 85, 0.7);
+    border-radius: 25px;
+    margin: 20px;
+    text-align: center;
+}
+
+/* When the active class is added, the detail view slides up */
+.item-detail-overlay.active {
+    transform: translateY(0); /* Slide up */
+}
+
+/* Icon to dismiss the overlay */
+.dismiss-icon {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 24px; /* Adjust size as necessary */
+    z-index: 10;
+}

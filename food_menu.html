@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Food Menu</title>
+<link rel="stylesheet" href="menustyles.css">
+</head>
+<body>
+
+<div class="header">
+    <div class="category-picker">
+        <button class="category-button" onclick="goToCategory('coffee')">Καφές</button>
+        <button class="category-button" onclick="goToCategory('burgers')">Burgers και Club</button>
+        <button class="category-button" onclick="goToCategory('salads')">Σαλάτες</button>
+        <button class="category-button" onclick="goToCategory('merides')">Μερίδες</button>
+        <button class="category-button" onclick="goToCategory('orektika')">Ορεκτικά</button>
+        <button class="category-button" onclick="goToCategory('patatoules')">Πατατούλες</button>
+        <button class="category-button" onclick="goToCategory('omeletes')">Ομελέτες</button>
+        <button class="category-button" onclick="goToCategory('sandwiches')">Σάντουιτς</button>
+        <button class="category-button" onclick="goToCategory('fasting')">Νηστίσιμα-Σαρακοστιανά</button>
+        <button class="category-button" onclick="goToCategory('pancakes')">Pancakes και Γλυκά</button>
+        <button class="category-button" onclick="goToCategory('pastries')">Αρτοποιήματα</button>
+        <button class="category-button" onclick="goToCategory('juice')">Φρέσκοι Χυμοί</button>
+        <button class="category-button" onclick="goToCategory('smoothies')">Σμούθι</button>
+        <button class="category-button" onclick="goToCategory('pop')">Αναψυκτικά</button>
+        <button class="category-button" onclick="goToCategory('wine')">Κρασιά</button>
+        <button class="category-button" onclick="goToCategory('beverages')">Ροφήματα</button>
+        <button class="category-button" onclick="goToCategory('beer')">Μπύρες</button>
+        <button class="category-button" onclick="goToCategory('drinks')">Ποτά</button>
+        <button class="category-button" onclick="goToCategory('summer')">Καλοκαιρινοί χυμοί κρυφή</button>
+    </div>
+</div>
+
+
+<div class="container" id="coffee">
+    <div class="box" onclick="showDetail('Espresso', '$2.50', 'Decaf +2€', 'coffee1.jpg')">
+        <img src="coffee1.jpg" alt="Coffee 1">
+        <div class="box-content">
+            <h2>Espresso</h2>
+            <p>Price: $2.50</p>
+            <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
+    <div class="box">
+        <img src="coffee2.jpg" alt="Coffee 2">
+        <div class="box-content">
+            <h2>Cappuccino</h2>
+            <p>Price: $3.00</p>
+            <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
+    <div class="box">
+        <img src="coffee3.jpg" alt="Coffee 3">
+        <div class="box-content">
+            <h2>Americano</h2>
+            <p>Price: $2.00</p>
+            <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="burgers">
+    <div class="box">
+        <img src="coffee1.jpg" alt="burger 1">
+        <div class="box-content">
+            <h2>Cheeseburger</h2>
+            <p>Price: $2.50</p>
+            <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
+    <div class="box">
+        <img src="coffee2.jpg" alt="burger 2">
+        <div class="box-content">
+            <h2>Meat free</h2>
+            <p>Price: $3.00</p>
+            <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
+    <div class="box">
+        <img src="coffee3.jpg" alt="burger 3">
+        <div class="box-content">
+            <h2>beef feta burger</h2>
+            <p>Price: $2.00</p>
+            <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
+</div>
+
+<div id="itemDetail" class="item-detail-overlay">
+    <div class="item-detail-content">
+        <span class="dismiss-icon">↓</span> <!-- This will be your dismiss 'icon' -->
+        <img id="detailImage" src="" alt="Item image">
+        <h2 id="detailTitle"></h2>
+        <p id="detailPrice"></p>
+        <p id="detailDescription"></p>
+        <!-- Remove the Close button -->
+    </div>
+</div>
+
+
+<script src="details.js"></script>
+</body>
+</html>

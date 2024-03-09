@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Website</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .header {
+        background-color: #f1ecd8;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+    .logo {
+        width: 100px;
+        height: auto;
+    }
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+    }
+    .box {
+        width: 200px;
+        margin: 10px;
+        text-align: center;
+        background-color:rgba(124,101,85,0.7);
+        border-radius: 25px;
+        transition: box-shadow 0.3s ease;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);; /* No box shadow by default */
+    }
+    .box img {
+        width: 100%;
+        height: auto;
+    }
+    .box h2 {
+        margin: 10px 0;
+    }
+    .box:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Box shadow on hover */
+    }
+    .box:active {
+        box-shadow: none; /* No box shadow when clicked */
+    }
+</style>
+</head>
+<body>
+
+<div class="header">
+    <img src="logo.jpeg" alt="Logo" class="logo">
+</div>
+
+<div class="container">
+    <div class="box" onclick="goToCategory('coffee')">
+        <img src="image1.jpg" alt="Image 1">
+        <h2>Coffee</h2>
+    </div>
+    <div class="box">
+        <img src="image2.jpg" alt="Image 2">
+        <h2>Title 2</h2>
+    </div>
+    <div class="box">
+        <img src="image2.jpg" alt="Image 2">
+        <h2>Title 2</h2>
+    </div>
+    <div class="box">
+        <img src="image2.jpg" alt="Image 2">
+        <h2>Title 2</h2>
+    </div>
+    <div class="box">
+        <img src="image2.jpg" alt="Image 2">
+        <h2>Title 2</h2>
+    </div>
+    <div class="box">
+        <img src="image2.jpg" alt="Image 2">
+        <h2>Title 2</h2>
+    </div>
+    <div class="box">
+        <img src="image2.jpg" alt="Image 2">
+        <h2>Title 2</h2>
+    </div>
+    <div class="box">
+        <img src="image2.jpg" alt="Image 2">
+        <h2>Title 2</h2>
+    </div>
+    <div class="box">
+        <img src="image2.jpg" alt="Image 2">
+        <h2>Title 2</h2>
+    </div>
+    <div class="box">
+        <img src="image2.jpg" alt="Image 2">
+        <h2>Title 2</h2>
+    </div>
+    <div class="box">
+        <img src="image2.jpg" alt="Image 2">
+        <h2>Title 2</h2>
+    </div>
+    <div class="box">
+        <img src="image2.jpg" alt="Image 2">
+        <h2>Title 2</h2>
+    </div>
+    <div class="box">
+        <img src="image2.jpg" alt="Image 2">
+        <h2>Title 2</h2>
+    </div>
+    <div class="box">
+        <img src="image2.jpg" alt="Image 2">
+        <h2>Title 2</h2>
+    </div>
+    <div class="box">
+        <img src="image2.jpg" alt="Image 2">
+        <h2>Title 2</h2>
+    </div>
+    <div class="box">
+        <img src="image2.jpg" alt="Image 2">
+        <h2>Title 2</h2>
+    </div>
+    <div class="box">
+        <img src="image2.jpg" alt="Image 2">
+        <h2>Title 2</h2>
+    </div>
+    <div class="box">
+        <img src="image2.jpg" alt="Image 2">
+        <h2>Title 2</h2>
+    </div>
+    <div class="box">
+        <img src="image2.jpg" alt="Image 2">
+        <h2>Title 2</h2>
+    </div>
+    <div class="box">
+        <img src="image2.jpg" alt="Image 2">
+        <h2>Title 2</h2>
+    </div>
+    <!-- Repeat the above div.box structure for all 20 boxes -->
+</div>
+<script>
+    function goToCategory(category) {
+        window.location.href = 'food_menu.html?category=' + category;
+    }
+</script>
+
+</body>
+</html>
